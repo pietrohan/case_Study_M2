@@ -4,12 +4,11 @@ import controller.UserManagement;
 import model.User;
 
 import java.util.Scanner;
-import java.util.jar.JarEntry;
 
 public class LoginView {
     Scanner scanner = new Scanner(System.in);
     private UserManagement userManagement = new UserManagement();
-    private Main main = new Main();
+    private MenuAdmin main = new MenuAdmin();
 
 
     public void run() {

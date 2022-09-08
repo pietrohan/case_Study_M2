@@ -1,6 +1,7 @@
 package controller;
 
 import model.User;
+import view.MenuAdmin;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -68,6 +69,7 @@ public class UserManagement {
         for (int i = 0; i < users.size(); i++) {
             if (acount.equals(users.get(i).getAcount()) && passwork.equals(users.get(i).getPasswork())) {
                 isLogin = true;
+                MenuAdmin.menuAdmin();
                 break;
             }
         }
