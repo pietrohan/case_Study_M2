@@ -6,6 +6,7 @@ import storage.ReadWriteFileClient;
 import storage.ReadWriteJewelry;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class ManagerClient {
     private String name;
@@ -41,5 +42,7 @@ public class ManagerClient {
             System.out.println(clientList.get(i));
         }
     }
+
+
 
 }

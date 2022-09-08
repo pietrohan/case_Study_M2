@@ -5,6 +5,7 @@ import storage.IReadWriteData;
 import storage.ReadWriteJewelry;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class ManagerJewelry {
     private String name;
@@ -77,4 +78,6 @@ public class ManagerJewelry {
         }
         return -1;
     }
+
+
 }
