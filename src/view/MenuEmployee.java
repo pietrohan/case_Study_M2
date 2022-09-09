@@ -12,8 +12,8 @@ import view.userAction.Product;
 
 import java.util.Scanner;
 
-public class MenuAdmin {
-    public static void menuAdmin() {
+public class MenuEmployee {
+    public static void menuEmployee() {
         ManagerClient clients = new ManagerClient("Client.txt");
         ManagerJewelry jewelies = new ManagerJewelry();
         ManagerEmployee managerEmployee = new ManagerEmployee("Employee.txt");
@@ -60,7 +60,7 @@ public class MenuAdmin {
                                 jewelies.displayjewlries();
                                 break;
                             case 5:
-                                menuAdmin();
+                                menuEmployee();
                         }
                     }while (choice1 != 0);
 
@@ -100,47 +100,26 @@ public class MenuAdmin {
                                 clients.displayPersons();
                                 break;
                             case 6:
-                                menuAdmin();
+                                menuEmployee();
                         }
                     }while (choice1 != 0);
 
                 case 3:
                     do {
                         System.out.println(" --- Employee Imformation ---");
-                        System.out.println("1. Thêm nhân viên\n" +
-                                "2. Sửa thông tin nhân viên\n" +
-                                "3. Xóa nhân viên khỏi hệ thống \n" +
-                                "4. Tổng tiền lương của nhân viên nhận được \n"+
-                                "5. Hiển thị thông tin của nhân viên\n" +
-                                "6. Quay lại \n" +
+                        System.out.println(
+                                "1. Hiển thị thông tin của nhân viên\n" +
+                                "2. Quay lại \n" +
                                 "0. thoát chương trình\n" +
                                 "---------------------------");
                         Scanner sc1 = new Scanner(System.in);
                         choice1 = sc1.nextInt();
                         switch (choice1){
                             case 1:
-                                Employee employee = EmployeeAction.newCEmployee();
-                                managerEmployee.addNewEmployee(employee);
-                                break;
-                            case 2:
-                                int index = EmployeeAction.getIndexOfPerson();
-                                employee = EmployeeAction.newCEmployee();
-                                managerEmployee.setEmployeeList(index, employee);
-                                break;
-                            case 3:
-                                index = EmployeeAction.getIndexOfPerson();
-                                managerEmployee.deletePerson(index);
-                                break;
-                            case 4:
-                                String idEmployee = EmployeeAction.getIdEmployee();
-                                double sumSalary = managerEmployee.sumSalaryEmployee(idEmployee);
-                                System.out.println(" tổng tiền thanh toán: " + sumSalary);
-                                break;
-                            case 5:
                                 managerEmployee.displayPersons();
                                 break;
-                            case 6:
-                                menuAdmin();
+                            case 2:
+                                menuEmployee();
                         }
                     }while (choice1 != 0);
 

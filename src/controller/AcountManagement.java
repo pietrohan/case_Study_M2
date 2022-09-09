@@ -1,16 +1,20 @@
 package controller;
 
+import model.Employee;
 import model.User;
 import view.MenuAdmin;
+import view.MenuClient;
+import view.MenuEmployee;
+import view.userAction.EmployeeAction;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserManagement {
+public class AcountManagement {
     private List<User> users = new ArrayList<>();
 
-    public UserManagement() {
+    public AcountManagement() {
         File file = new File("user.txt");
         if (file.exists()) {
             try {
@@ -67,9 +71,17 @@ public class UserManagement {
     public boolean checkUserLogin(String acount, String passwork) {
         boolean isLogin = false;
         for (int i = 0; i < users.size(); i++) {
-            if (acount.equals(users.get(i).getAcount()) && passwork.equals(users.get(i).getPasswork())) {
+            if (acount.equals("phamhan") && passwork.equals("123456")){
                 isLogin = true;
                 MenuAdmin.menuAdmin();
+            }
+            else if (acount.equals(users.get(i).getAcount()+ "phamhan") && passwork.equals(users.get(i).getPasswork())) {
+                isLogin = true;
+                MenuEmployee.menuEmployee();
+                break;
+            } else if (acount.equals(users.get(i).getAcount()) && passwork.equals(users.get(i).getPasswork())) {
+                isLogin = true;
+                MenuClient.menuClient();
                 break;
             }
         }

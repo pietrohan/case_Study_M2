@@ -3,6 +3,8 @@ package controller;
 import model.Jewlry;
 import storage.IReadWriteData;
 import storage.ReadWriteJewelry;
+import view.MenuAdmin;
+import view.userAction.Product;
 
 import java.util.List;
 import java.util.Scanner;

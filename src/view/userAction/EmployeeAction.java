@@ -37,7 +37,7 @@ public class EmployeeAction {
         return index;
     }
     public static String getIdEmployee() {
-        System.out.println("Nhập mã sản phẩm: ");
+        System.out.println("Nhập mã nhân viên: ");
         Scanner scanner2=new Scanner(System.in);
         String idEmployee =scanner2.nextLine();
         return idEmployee;

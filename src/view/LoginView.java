@@ -1,13 +1,13 @@
 package view;
 
-import controller.UserManagement;
+import controller.AcountManagement;
 import model.User;
 
 import java.util.Scanner;
 
 public class LoginView {
     Scanner scanner = new Scanner(System.in);
-    private UserManagement userManagement = new UserManagement();
+    private AcountManagement acountManagement = new AcountManagement();
     private MenuAdmin main = new MenuAdmin();
 
 
@@ -25,6 +25,9 @@ public class LoginView {
                 case 2:
                     doRegister();
                     break;
+                case 3:
+                    MenuClient.menuClient();
+                    break;
                 case 0:
                     break;
             }
@@ -36,7 +39,7 @@ public class LoginView {
         String acount = scanner.nextLine();
         System.out.println("Nhập mật khẩu: ");
         String passwork = scanner.nextLine();
-        boolean isLogin = userManagement.checkUserLogin(acount, passwork);
+        boolean isLogin = acountManagement.checkUserLogin(acount, passwork);
         if (isLogin){
             System.out.println("Đăng nhập thành công");
             main.toString();
@@ -49,7 +52,7 @@ public class LoginView {
     private void doRegister() {
         System.out.println("Đăng kí tài khoản");
         User user = createUser();
-        userManagement.register(user);
+        acountManagement.register(user);
     }
 
     private User createUser() {
@@ -129,7 +132,7 @@ public class LoginView {
             if (username.length() < 6 || username.length() > 12) {
                 System.err.println("Tài khoản không hợp lệ");
                 inputAcount();
-            } else if (userManagement.checkUsernameExist(username)) {
+            } else if (acountManagement.checkUsernameExist(username)) {
                 System.err.println("Tài khoản này đã tồn tại");
             }
             try {
@@ -137,7 +140,7 @@ public class LoginView {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        } while (username.length() < 6 || username.length() > 12 || userManagement.checkUsernameExist(username));
+        } while (username.length() < 6 || username.length() > 12 || acountManagement.checkUsernameExist(username));
         return username;
     }
 
@@ -146,11 +149,7 @@ public class LoginView {
         System.out.println("---Ứng dụng quản lí cửa hàng đồ trang sức---");
         System.out.println("1.Đăng nhập");
         System.out.println("2.Đăng kí");
+        System.out.println("3.Hiển thị thông tin sản phẩm tại cửa hàng");
         System.out.println("0.Thoát chương trình");
     }
-
-        public static void main(String[] args) {
-            LoginView LG = new LoginView();
-            LG.run();
-        }
 }
