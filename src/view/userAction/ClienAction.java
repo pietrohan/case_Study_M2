@@ -17,7 +17,7 @@ public class ClienAction {
         String name = sc.nextLine();
         System.out.println(" nhập thông tin đặc biệt của khách hàng: ");
         String information = sc.nextLine();
-        System.out.println(" nhâ số điện thoại: ");
+        System.out.println(" nhập số điện thoại: ");
         String phoneNumber = sc1.nextLine();
         System.out.println(" nhập địa chỉ của khách hàng: ");
         String address = sc1.nextLine();
@@ -29,8 +29,8 @@ public class ClienAction {
         int index=scanner.nextInt();
         return index;
     }
-    public static String getIdProduct() {
-        System.out.println("Nhập mã sản phẩm: ");
+    public static String getIdClient() {
+        System.out.println("Nhập mã khách hàng: ");
         Scanner scanner2=new Scanner(System.in);
         String idProduct =scanner2.nextLine();
         return idProduct;

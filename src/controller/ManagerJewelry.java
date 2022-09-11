@@ -3,11 +3,8 @@ package controller;
 import model.Jewlry;
 import storage.IReadWriteData;
 import storage.ReadWriteJewelry;
-import view.MenuAdmin;
-import view.userAction.Product;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class ManagerJewelry {
     private String name;
@@ -32,8 +29,8 @@ public class ManagerJewelry {
         jewlryList.add(jewlry);
         iReadWriteData.writeData(jewlryList);
     }
-    public void deleteProductById(String roomId){
-        int index=findJewlryById(roomId);
+    public void deleteProductById(String id){
+        int index=findJewlryById(id);
         if(index>-1){
             jewlryList.remove(index);
             iReadWriteData.writeData(jewlryList);
@@ -66,7 +63,7 @@ public class ManagerJewelry {
         public double getMoney(String idProduct) {
             int index = findClientByIdProduct(idProduct);
             try {
-                return jewlryList.get(index).getIngredientPrice()+jewlryList.get(index).getMachiningPrice();
+                return (jewlryList.get(index).getIngredientPrice()+jewlryList.get(index).getMachiningPrice())*jewlryList.get(index).getAmountProduct();
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.err.println("Không tìm thấy sản phẩm này.");
                 return 0;

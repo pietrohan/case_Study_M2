@@ -35,7 +35,7 @@ public class MenuAdmin {
                         System.out.println(" --- Jewlry Product ---");
                         System.out.println("1. Thêm sản phẩm \n" +
                                 "2. Sửa thông tin sản phẩm \n" +
-                                "3. Xóa sản phẩm" +
+                                "3. Xóa sản phẩm\n" +
                                 "4. Hiển thị thông tin sản phẩm \n" +
                                 "5. Quay lại\n" +
                                 "0. thoát chương trình\n" +
@@ -66,7 +66,7 @@ public class MenuAdmin {
 
                 case 2:
                     do {
-                        System.out.println(" --- Client Imformation ---");
+                        System.out.println(" ----- Client Imformation -----");
                         System.out.println("1. Thêm khách hàng\n" +
                                 "2. Sửa thông tin khách hàng\n" +
                                 "3. Xóa khách hàng \n" +
@@ -92,8 +92,8 @@ public class MenuAdmin {
                                 clients.deletePerson(index);
                                 break;
                             case 4:
-                                String idProduct = ClienAction.getIdProduct();
-                                int money = (int) jewelies.getMoney(idProduct);
+                                String idProduct = ClienAction.getIdClient();
+                                double money = clients.getMoney1(idProduct);
                                 System.out.println(" tổng tiền thanh toán: " + money);
                                 break;
                             case 5:
@@ -134,7 +134,7 @@ public class MenuAdmin {
                             case 4:
                                 String idEmployee = EmployeeAction.getIdEmployee();
                                 double sumSalary = managerEmployee.sumSalaryEmployee(idEmployee);
-                                System.out.println(" tổng tiền thanh toán: " + sumSalary);
+                                System.out.println(" tổng tiền lương tháng: " + sumSalary);
                                 break;
                             case 5:
                                 managerEmployee.displayPersons();

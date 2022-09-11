@@ -42,6 +42,23 @@ public class ManagerClient {
             System.out.println(clientList.get(i));
         }
     }
+    public double getMoney1(String id) {
+        int index = findClientByIdClient(id);
+        try {
+            return (clientList.get(index).getJewlry().getIngredientPrice()+clientList.get(index).getJewlry().getMachiningPrice())*clientList.get(index).getJewlry().getAmountProduct();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Không tìm thấy sản phẩm này.");
+            return 0;
+        }
+    }
+    private int findClientByIdClient(String id) {
+        for (int i = 0; i < clientList.size(); i++) {
+            if(clientList.get(i).getId().equals(id)){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 

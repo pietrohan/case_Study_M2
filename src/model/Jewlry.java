@@ -5,19 +5,28 @@ import java.io.Serializable;
 public class Jewlry implements Serializable {
     //idProduct, nameProduct, typeProduct, infomationProduct, weight, price
     private String idProduct, nameProduct, typeProduct, materialProduct;
-    private int weight, ingredientPrice, machiningPrice;
+    private int amountProduct,weight, ingredientPrice, machiningPrice;
 
     public Jewlry() {
     }
 
-    public Jewlry(String idProduct, String nameProduct, String typeProduct, String materialProduct, int weight, int ingredientPrice, int machiningPrice) {
+    public Jewlry(String idProduct, String nameProduct,int amountProduct, String typeProduct, String materialProduct, int weight, int ingredientPrice, int machiningPrice) {
         this.idProduct = idProduct;
         this.nameProduct = nameProduct;
+        this.amountProduct = amountProduct;
         this.typeProduct = typeProduct;
         this.materialProduct = materialProduct;
         this.weight = weight;
         this.ingredientPrice = ingredientPrice;
         this.machiningPrice = machiningPrice;
+    }
+
+    public int getAmountProduct() {
+        return amountProduct;
+    }
+
+    public void setAmountProduct(int amountProduct) {
+        this.amountProduct = amountProduct;
     }
 
     public String getIdProduct() {
@@ -81,6 +90,7 @@ public class Jewlry implements Serializable {
         return "Jewlry{" +
                 "idProduct='" + idProduct + '\'' +
                 ", nameProduct='" + nameProduct + '\'' +
+                ", amountProduct=" + amountProduct +
                 ", typeProduct='" + typeProduct + '\'' +
                 ", materialProduct='" + materialProduct + '\'' +
                 ", weight=" + weight +

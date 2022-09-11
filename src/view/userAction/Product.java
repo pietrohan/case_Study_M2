@@ -15,8 +15,10 @@ public class Product {
         String idProduct = sc.nextLine();
         System.out.println(" nhập tên sản phẩm: ");
         String nameProduct = sc.nextLine();
+        System.out.println(" nhập số lượng sản phẩm: ");
+        int amountProduct = sc.nextInt();
         System.out.println(" nhập loại sản phẩm: ");
-        String typeProduct = sc.nextLine();
+        String typeProduct = sc1.nextLine();
         int machiningPrice = 1100000;
         if (typeProduct.equals("choker"))
             machiningPrice = 1000000;
@@ -37,7 +39,7 @@ public class Product {
         if (materialProduct.equals("Gold"))
             ingredientPrice = 6500000*weight;
         else ingredientPrice = 100000*weight;
-        return new Jewlry(idProduct,nameProduct,typeProduct,materialProduct,weight,ingredientPrice,machiningPrice);
+        return new Jewlry(idProduct,nameProduct,amountProduct,typeProduct,materialProduct,weight,ingredientPrice,machiningPrice);
     }
     public static int getProductIndex() {
         System.out.println("Mời nhập sản phẩm cần thay đổi thông tin");
@@ -46,9 +48,15 @@ public class Product {
         return index;
     }
     public static String getProductId() {
-        System.out.println("Nhập vị trí sản phẩm cần xóa: ");
+        System.out.println("Nhập mã sản phẩm cần xóa: ");
         Scanner scanner=new Scanner(System.in);
         String productId=scanner.nextLine();
         return productId;
+    }
+    public static String addProductId() {
+        System.out.println("Nhập sản phẩm cần thêm vào giỏ: ");
+        Scanner scanner=new Scanner(System.in);
+        String addProductId=scanner.nextLine();
+        return addProductId;
     }
 }

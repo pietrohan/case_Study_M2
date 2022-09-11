@@ -17,8 +17,8 @@ public class MenuEmployee {
         ManagerClient clients = new ManagerClient("Client.txt");
         ManagerJewelry jewelies = new ManagerJewelry();
         ManagerEmployee managerEmployee = new ManagerEmployee("Employee.txt");
-        int choice =-1;
-        int choice1 =-1;
+        int choice;
+        int choice1;
 
         do {
             System.out.println("-----Menu-----");
@@ -35,7 +35,7 @@ public class MenuEmployee {
                         System.out.println(" --- Jewlry Product ---");
                         System.out.println("1. Thêm sản phẩm \n" +
                                 "2. Sửa thông tin sản phẩm \n" +
-                                "3. Xóa sản phẩm" +
+                                "3. Xóa sản phẩm\n" +
                                 "4. Hiển thị thông tin sản phẩm \n" +
                                 "5. Quay lại\n" +
                                 "0. thoát chương trình\n" +
@@ -92,8 +92,8 @@ public class MenuEmployee {
                                 clients.deletePerson(index);
                                 break;
                             case 4:
-                                String idProduct = ClienAction.getIdProduct();
-                                int money = (int) jewelies.getMoney(idProduct);
+                                String idProduct = ClienAction.getIdClient();
+                                double money = clients.getMoney1(idProduct);
                                 System.out.println(" tổng tiền thanh toán: " + money);
                                 break;
                             case 5:

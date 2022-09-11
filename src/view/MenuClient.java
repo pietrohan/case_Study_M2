@@ -14,8 +14,9 @@ import java.util.Scanner;
 
 public class MenuClient {
     public static void menuClient() {
-
-        ManagerJewelry jewelies = new ManagerJewelry("jewlry");
-        jewelies.displayjewlries();
+            ManagerClient clients = new ManagerClient("Client.txt");
+            ManagerJewelry jewelies = new ManagerJewelry();
+            ManagerEmployee managerEmployee = new ManagerEmployee("Employee.txt");
+            int choice =-1;
     }
 }
