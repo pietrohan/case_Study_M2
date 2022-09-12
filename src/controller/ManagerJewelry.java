@@ -60,23 +60,32 @@ public class ManagerJewelry {
         }
     }
 
-        public double getMoney(String idProduct) {
-            int index = findClientByIdProduct(idProduct);
-            try {
-                return (jewlryList.get(index).getIngredientPrice()+jewlryList.get(index).getMachiningPrice())*jewlryList.get(index).getAmountProduct();
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.err.println("Không tìm thấy sản phẩm này.");
-                return 0;
-            }
-        }
+//        public double findProduct(String idProduct) {
+//            int index = findClientByIdProduct(idProduct);
+//            try {
+//                return jewlryList;
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                System.err.println("Không tìm thấy sản phẩm này.");
+//                return 0;
+//            }
+//        }
     private int findClientByIdProduct(String id) {
         for (int i = 0; i < jewlryList.size(); i++) {
             if(jewlryList.get(i).getIdProduct().equals(id)){
                 return i;
+            }else{
+                System.out.println("không tìm thấy sản phẩm này.");
             }
         }
         return -1;
     }
-
+    public Jewlry search(String id){
+        for (int i = 0; i < jewlryList.size(); i++) {
+            if (jewlryList.get(i).getIdProduct().equals(id)) {
+                return jewlryList.get(i);
+            }
+        }
+        return null;
+    }
 
 }

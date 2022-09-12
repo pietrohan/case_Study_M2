@@ -37,7 +37,8 @@ public class MenuAdmin {
                                 "2. Sửa thông tin sản phẩm \n" +
                                 "3. Xóa sản phẩm\n" +
                                 "4. Hiển thị thông tin sản phẩm \n" +
-                                "5. Quay lại\n" +
+                                "5. Tìm kếm sản phẩm \n" +
+                                "6. Quay lại\n" +
                                 "0. thoát chương trình\n" +
                                 "---------------------------");
                         Scanner sc1 = new Scanner(System.in);
@@ -60,6 +61,10 @@ public class MenuAdmin {
                                 jewelies.displayjewlries();
                                 break;
                             case 5:
+                                String idProduct = Product.getProductId();
+                                Jewlry jewlry1 = jewelies.search(idProduct);
+                                System.out.println(jewlry1);
+                            case 6:
                                 menuAdmin();
                         }
                     }while (choice1 != 0);
@@ -70,9 +75,10 @@ public class MenuAdmin {
                         System.out.println("1. Thêm khách hàng\n" +
                                 "2. Sửa thông tin khách hàng\n" +
                                 "3. Xóa khách hàng \n" +
-                                "4. Tổng tiền thanh toán \n"+
+                                "4. khách hàng thanh toán (nhập id Client) \n"+
                                 "5. Hiển thị thông tin khách hàng\n" +
-                                "6. Quay lại \n" +
+                                "6. Tìm kiếm khách hàng\n" +
+                                "7. Quay lại \n" +
                                 "0. thoát chương trình.\n" +
                                 "---------------------------------");
                         Scanner sc1 = new Scanner(System.in);
@@ -92,14 +98,18 @@ public class MenuAdmin {
                                 clients.deletePerson(index);
                                 break;
                             case 4:
-                                String idProduct = ClienAction.getIdClient();
-                                double money = clients.getMoney1(idProduct);
+                                String idClient = ClienAction.getIdClient();
+                                double money = clients.getMoney1(idClient);
                                 System.out.println(" tổng tiền thanh toán: " + money);
                                 break;
                             case 5:
                                 clients.displayPersons();
                                 break;
                             case 6:
+                                String id = Product.getProductId();
+                                Client client = clients.search(id);
+                                System.out.println(client);
+                            case 7:
                                 menuAdmin();
                         }
                     }while (choice1 != 0);

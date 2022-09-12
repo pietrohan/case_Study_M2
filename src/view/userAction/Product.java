@@ -48,7 +48,7 @@ public class Product {
         return index;
     }
     public static String getProductId() {
-        System.out.println("Nhập mã sản phẩm cần xóa: ");
+        System.out.println("Nhập mã sản phẩm: ");
         Scanner scanner=new Scanner(System.in);
         String productId=scanner.nextLine();
         return productId;

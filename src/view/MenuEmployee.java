@@ -37,7 +37,8 @@ public class MenuEmployee {
                                 "2. Sửa thông tin sản phẩm \n" +
                                 "3. Xóa sản phẩm\n" +
                                 "4. Hiển thị thông tin sản phẩm \n" +
-                                "5. Quay lại\n" +
+                                "5. tìm kiếm thông tin sản phẩm \n" +
+                                "6. Quay lại\n" +
                                 "0. thoát chương trình\n" +
                                 "---------------------------");
                         Scanner sc1 = new Scanner(System.in);
@@ -60,6 +61,10 @@ public class MenuEmployee {
                                 jewelies.displayjewlries();
                                 break;
                             case 5:
+                               String idProduct = Product.getProductId();
+                              Jewlry jewlry1 = jewelies.search(idProduct);
+                                System.out.println(jewlry1);
+                            case 6:
                                 menuEmployee();
                         }
                     }while (choice1 != 0);
@@ -70,9 +75,10 @@ public class MenuEmployee {
                         System.out.println("1. Thêm khách hàng\n" +
                                 "2. Sửa thông tin khách hàng\n" +
                                 "3. Xóa khách hàng \n" +
-                                "4. Tổng tiền thanh toán \n"+
+                                "4. Khách hàng thanh toán ( nhập id Client) \n"+
                                 "5. Hiển thị thông tin khách hàng\n" +
-                                "6. Quay lại \n" +
+                                "6. tìm kiếm khách hàng\n" +
+                                "7. Quay lại \n" +
                                 "0. thoát chương trình.\n" +
                                 "---------------------------------");
                         Scanner sc1 = new Scanner(System.in);
@@ -100,6 +106,10 @@ public class MenuEmployee {
                                 clients.displayPersons();
                                 break;
                             case 6:
+                                String id = Product.getProductId();
+                                Client client = clients.search(id);
+                                System.out.println(client);
+                            case 7:
                                 menuEmployee();
                         }
                     }while (choice1 != 0);

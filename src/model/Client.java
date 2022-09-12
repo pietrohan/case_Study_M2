@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Client implements Serializable, Discount {
+public class Client implements Serializable {
     //id, name, information, phoneNumber, address
     private String id, name, information, phoneNumber, address;
     private Jewlry jewlry;
