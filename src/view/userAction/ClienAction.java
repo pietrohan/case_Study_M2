@@ -24,7 +24,7 @@ public class ClienAction {
         return new Client(id,name,information,phoneNumber,address,Product.getJewlryInfomation());
     }
     public static int getIndexOfPerson() {
-        System.out.println("Nhập vị trí khách hàng cần sửa đổi hoặc xóa");
+        System.out.println("Nhập id khách hàng cần sửa đổi hoặc xóa");
         Scanner scanner=new Scanner(System.in);
         int index=scanner.nextInt();
         return index;

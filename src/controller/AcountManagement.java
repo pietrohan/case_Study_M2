@@ -1,5 +1,6 @@
 package controller;
 
+import model.Client;
 import model.Employee;
 import model.User;
 import view.MenuAdmin;
@@ -75,7 +76,7 @@ public class AcountManagement {
                 isLogin = true;
                 MenuAdmin.menuAdmin();
             }
-            else if (acount.equals(users.get(i).getAcount()+ "phamhan") && passwork.equals(users.get(i).getPasswork())) {
+            else if (acount.equals(users.get(i).getAcount()+ "ph") && passwork.equals(users.get(i).getPasswork())) {
                 isLogin = true;
                 MenuEmployee.menuEmployee();
                 break;
