@@ -14,8 +14,20 @@ import java.util.Scanner;
 
 public class MenuClient {
     public static void menuClient() {
-            ManagerClient clients = new ManagerClient("ClientVIP.txt");
-            ManagerJewelry jewelies = new ManagerJewelry();
+        ManagerJewelry jewelies = new ManagerJewelry();
         jewelies.displayjewlries();
+        int choice =-1;
+        do {
+            System.out.println("1. Tìm kiếm sản phẩm: \n" +
+                    "0.  Thoát chương trình");
+            switch (choice){
+                case 1:
+                    String idProduct = Product.getProductId();
+                    Jewlry jewlry1 = jewelies.search(idProduct);
+                    System.out.println(jewlry1);
+            }
+        }while (choice!=0);
+
+
     }
 }

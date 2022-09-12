@@ -60,15 +60,7 @@ public class ManagerClient {
         }
         return -1;
     }
-    public double findProduct(String id) {
-        int index = findClientByIdClient(id);
-        try {
-            return clientList.get(index).getJewlry().getIngredientPrice();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.err.println("Không tìm thấy khách này.");
-            return 0;
-        }
-    }
+
     public Client search(String id){
         for (int i = 0; i < clientList.size(); i++) {
             if (clientList.get(i).getId().equals(id)) {
@@ -77,6 +69,4 @@ public class ManagerClient {
         }
         return null;
     }
-
-
 }
